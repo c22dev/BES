@@ -15,6 +15,7 @@ chmod +x bes.sh
 ```
 
 ## 📇 Goals
+- A Swift GUI Configurator is planned.
 - Protect you and your data from any malicious attempt by profiting of badly configured MDM
 - Reduce lags related to your school's proprietary software monitoring
 - Prevent MDM Profiles remote push
@@ -30,19 +31,27 @@ chmod +x bes.sh
 
 
 ## 🪄 Actual Capabilities
-### 0.1a capabilities
+### 0.1b capabilities
 - Launch BES as a startup daemon (aka besd)
 - Remove FileWave or ActiveMgr from launchctl
 - Global reset of permissions using tccutil
 - Perma-kill FW-GUI and Active Mgr
+- Block connections to any of your campus CO network if said so (check every second). Please set isFCOBlocked to true if you want to enable this feature.
 Those features were and are being tested, and are confirmed to work.
    
-### 0.1a in-dev capabilities (already present in script)
+### 0.1b in-dev capabilities (already present in script)
+- fwcld daemon hooker
+  - A seperated executable will be in charge of hooking the daemon (ntdx)
+  - The executable will hook the daemon using CVE-2023-41981 if a PoC for the following CVE is published, by abusing of CoreTrust.
+  - Patched in Sonoma 14.0, don't update.
+  - This would allow us to do what we want with FileWave.
+  - The binary isn't (yet) present in git repository as it just won't work for now.
 - Blocking app internet connection using pfctl
 - Blocking servers using pfctl
-- Make FileWave believe it's 2008 ([faketime](https://github.com/wolfcw/libfaketime))
+- Make FileWave believe it's 2008 ([faketime](https://github.com/wolfcw/libfaketime)) using in-dev daemon hooking
   - Breaking SSL Certificate Auth
   - Breaking server connection interval
+
 Those features encounter some issues, depesite an attempt of running them is made by the script :
  - pfctl might requires some admin privileges for certain rules. This is being worked on.
- - faketime's lib (libfaketime) isn't currently built for arm64 and isn't hooking system properly. This should be fixed in 0.1b
+ - faketime's lib (libfaketime) is currently built for arm64 but isn't hooking fwcld daemon properly.
