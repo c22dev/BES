@@ -89,7 +89,7 @@ for server in "${servers[@]}"; do
     pfctl -t blockedhosts -T add "${server}:${port}"
 done
 
-# Fake time for FW to corrupt SSL Certificate and avoid FileWave server connection interval (This might not work for the moment as I haven't worked on system daemon hooking yet, and libfaketime isn't built for arm64 architecture.)
+# Fake time for FW to corrupt https and avoid FileWave server connection interval (This might not work for the moment)
 
 # First, we create bin directory for libfaketime if not existing already
 if [ ! -d "/Users/etudiant/Library/Printers/.bin/faketime/" ]; then
@@ -146,7 +146,7 @@ while :; do
     launchctl_time
     if [ "$isFCOBlocked" = "true" ]; then # If you want this to work, you need to set isFCOBlocked to true. This is meant to block any connection to FLORIMONT-CO network.
         if /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I | grep -i "SSID: FLORIMONT-CO"; then
-            networksetup -setairportpower Wi-Fi off # Here, we disable Wi-Fi if connected to Florimont-CO. This is commented as it might be annoying. 
+            networksetup -setairportpower Wi-Fi off # Here, we disable Wi-Fi if connected to Florimont-CO. This is disabled as it might be annoying. 
         fi
     fi  
     sleep 1
