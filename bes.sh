@@ -84,7 +84,7 @@ pfctl -f "/Users/etudiant/Library/Application Support/FileWave/block_app.pf"
 pfctl -e
 
 # Using pfctl server blocking
-# Block NAT connections
+# Block connexions
 for server in "${servers[@]}"; do
     pfctl -t blockedhosts -T add "${server}:${port}"
 done
