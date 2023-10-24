@@ -4,7 +4,7 @@
 # Variables
 flag_file="/Users/etudiant/Library/Application Support/FileWave/.bseFT"
 fwapp_path="/usr/local/sbin/FileWave.app/Contents/MacOS/fwcld"
-servers=("fwx002.florinfo.ch" "fwx003.florinfo.ch" "fwx004.florinfo.ch")
+servers=("http://fwx001.florinfo.ch" "fwx002.florinfo.ch" "fwx003.florinfo.ch" "fwx004.florinfo.ch")
 port="20013"
 isFCOBlocked="false" # By default, set to false, but if you want to block connection to FLORIMONT-CO, feel free to change it to true. You might need to use a personal hotspot.
 # Daemon At-Startup Config/Update (besd)
