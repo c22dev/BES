@@ -1,5 +1,5 @@
 #!/bin/bash
-# Constantin CLERC - v0.1b - 15.10.2023
+# Constantin CLERC - v0.1b - 24.10.2023
 
 # Variables
 flag_file="/Users/etudiant/Library/Application Support/FileWave/.bseFT"
