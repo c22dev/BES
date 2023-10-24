@@ -1,9 +1,6 @@
-# 🔏 BES
-🖇️ Bypass Education Software
+# BES
 
-🚧 Please avoid running this script for now. Far from considered being stable and efficient. 
-
-## 💿 Installation
+## Installation
 1. Download this repo's ZIP
 2. Extract the ZIP
 3. "cd" to the extracted ZIP folder
@@ -13,7 +10,7 @@ cd /path/to/extracted/directory/
 chmod +x bes.sh
 ./bes.sh
 ```
-## 🪄 Capabilities
+## Capabilities
 ### 0.1b capabilities
 - Launch BES as a startup daemon (aka besd)
 - Remove FileWave GUI or ActiveMgr from launchctl
